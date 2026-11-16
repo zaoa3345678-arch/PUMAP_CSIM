@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>靜宜資管島｜靜宜大學資訊管理學系 3D 學習導覽地圖</title>
+<meta name="description" content="以 3D 六角群島呈現靜宜大學資訊管理學系的系務、四大專業學程、7 間實驗室、13 位專任教師、畢業專題、企業實習、證照與出路。資料來源：系所官網。">
+<meta name="theme-color" content="#1E4E8C">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="./style.css?v=2">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">PU<b>IM</b></span>
+    <div>
+      <h1>靜宜資管島</h1>
+      <p>靜宜大學 資訊管理學系・3D 學習導覽地圖（試作版）</p>
+    </div>
+  </div>
+  <div class="tools">
+    <label class="search"><span class="sr">搜尋</span>
+      <input id="q" type="search" placeholder="搜尋：課程、老師、實驗室、證照…" autocomplete="off">
+    </label>
+    <div class="seg" role="tablist" aria-label="檢視模式">
+      <button id="v3d" role="tab" aria-selected="true" class="on">🗺️ 3D 地圖</button>
+      <button id="v2d" role="tab" aria-selected="false">🧭 學習路徑</button>
+    </div>
+  </div>
+</header>
+
+<nav class="stages" aria-label="依學年篩選">
+  <span>依學年亮起：</span>
+  <div id="stageChips"></div>
+</nav>
+
+<main>
+  <section id="map" aria-label="3D 群島地圖">
+    <div id="stage3d"></div>
+    <div class="hint" id="hint">拖曳旋轉・滾輪縮放・點擊島嶼或建築查看介紹</div>
+    <div id="results" class="results" hidden></div>
+  </section>
+
+  <section id="path" class="path" aria-label="學習路徑" hidden></section>
+
+  <aside id="panel" class="panel" aria-live="polite"></aside>
+</main>
+
+<footer class="foot">
+  資料來源：<a href="https://csim.pu.edu.tw/" target="_blank" rel="noopener">靜宜大學資訊管理學系官網</a>（擷取 2026-11-16）・
+  概念改編自 HTL Island Navigator・Three.js (MIT)・本頁為教學試作，非系所官方網站
+</footer>
+
+<script type="module" src="./app.js?v=2"></script>
+</body>
+</html>
